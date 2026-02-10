@@ -1,0 +1,503 @@
+.about-page {
+  min-height: 100vh;
+  background-color: #000000;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #e2e8f0;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.about-header {
+  text-align: center;
+  color: #f8fafc;
+  margin-bottom: 60px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.page-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-subheading {
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.95;
+  color: #cbd5e1;
+}
+
+/* College Section */
+.college-section {
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* College Card Redesign */
+.college-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  max-width: 1100px;
+  /* Increased max-width for landscape */
+  margin: 0 auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.college-card-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 400px;
+}
+
+/* ... (existing styles) ... */
+
+.member-avatar {
+  width: 100%;
+  height: 280px;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.member-avatar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(30, 41, 59, 1), transparent);
+  opacity: 0.8;
+}
+
+.team-card .card-header {
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+.team-card:hover .member-avatar {
+  border-color: #3b82f6;
+  transform: none;
+  /* Remove scale on container */
+  box-shadow: none;
+}
+
+.team-card:hover .member-image {
+  transform: scale(1.05);
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.college-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.college-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.college-card:hover::before {
+  opacity: 1;
+}
+
+.visit-website-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visit-website-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.college-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 0 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+}
+
+.college-icon {
+  color: #3b82f6;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+}
+
+.college-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  color: #f8fafc;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.college-content {
+  padding: 24px 0 0 0;
+}
+
+.institution-details {
+  font-size: 1.1rem;
+  color: #60a5fa;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.institution-location {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.college-content p {
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.college-image-container {
+  width: 40%;
+  /* Reduced width */
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+}
+
+.college-info-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  /* Reduced padding */
+}
+
+.college-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.college-card:hover .college-image {
+  transform: scale(1.05);
+}
+
+.college-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to right, transparent 0%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+/* Responsive adjustments for College Card */
+@media (max-width: 900px) {
+  .college-card-inner {
+    flex-direction: column;
+  }
+
+  .college-image-container {
+    width: 100%;
+    height: 200px;
+    /* Reduced mobile height */
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .college-info-container {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .college-overlay {
+    background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.8) 100%);
+  }
+
+  .college-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Team Section */
+.team-section {
+  animation: fadeInUp 1s ease-out;
+  margin-bottom: 80px;
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.team-icon {
+  color: #3b82f6;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  color: #f8fafc;
+  margin: 0;
+  font-weight: 700;
+}
+
+.team-description {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Team Grid - Centered Layout */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Team Card Redesign */
+.team-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.team-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+
+
+
+.member-info {
+  padding: 24px 24px 0;
+  text-align: left;
+}
+
+.member-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.75rem;
+  margin: 20px 24px 4px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  background: linear-gradient(to right, #f8fafc, #cbd5e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.member-role {
+  color: #60a5fa;
+  margin: 0 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.member-content {
+  padding: 24px;
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.member-description {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+
+
+/* Footer */
+.about-footer {
+  text-align: center;
+  color: #64748b;
+  padding-top: 60px;
+  border-top: 1px solid #1e293b;
+  margin-top: 80px;
+}
+
+.about-footer p {
+  margin: 8px 0;
+  font-size: 0.9375rem;
+}
+
+.about-footer p:first-child {
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 2.5rem;
+  }
+
+  .college-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .college-content {
+    padding: 24px;
+  }
+
+  .college-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 24px 16px;
+  }
+
+  .page-heading {
+    font-size: 2rem;
+  }
+
+  .about-header {
+    margin-bottom: 40px;
+  }
+
+
+}
